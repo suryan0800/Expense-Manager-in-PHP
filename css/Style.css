@@ -1,0 +1,36 @@
+ head,body
+{
+	height: 100%;
+}
+
+body
+{
+	margin: 0px;
+	padding: 0px;
+	background: biege;
+	font-family: 'Roboto';
+	font-size: 14pt;
+
+}
+
+h1,h2,h3
+{
+	margin: 0;
+	padding: 0;
+	color: #404040;
+	
+}
+
+p,ol,ul
+{
+	margin-top: 0;
+	
+}
+
+p
+{
+	line-height: 200%;
+	
+}
+
+
