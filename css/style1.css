@@ -9,7 +9,7 @@ input
               text-decoration: none;
               display: inline-block;
               font-weight: bold;
-              width: 75%;
+              width: 25%;
               font-size: 14px;
               margin: 4px 2px;
               cursor: pointer;
@@ -18,16 +18,23 @@ input
 body
 {
     color : white; 
-    text-align : center; 
-    width : 500px; 
-    margin : 20px auto;
     background : #002447;
+    text-align : center;  
     font-weight: bold;
-    font-size: 30px;
+    font-size: 25px;
 }
 
 p
 {
     font-weight: normal;
     font-size: 25px;
+}
+
+.top
+{
+     width: 97%;
+     margin: auto;
+     height: 100px;
+     padding: 1px 10px;
+     text-align : center; 
 }

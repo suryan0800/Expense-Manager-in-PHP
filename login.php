@@ -1,16 +1,20 @@
 <html>
     <head>
+        <title>Login Page - Expense Manager</title>
         <link rel = "stylesheet"
               type = "text/css"
               href = "css/style1.css" />
     <head>
     <body>
-       <h3>Expense Manager</h3><br>
-       <p>Login to enjoy benefits of Expense Manager</p>
-       <div  style = " margin : 100px auto; text-align : center;">	
+       <div class = "top">
+            <h3>Expense Manager</h3>
+       </div>
+      
+       <div  style = "  text-align : center;   background : #002447;">	
+            <p>Login to enjoy benefits of Expense Manager</p>
             <form action="login.php" method="post">
                  <input type="text" name="name" placeholder="User Name"><br><br>
-                 <input type="password" name="pass" placeholder="Password"><br><br><br>
+                 <input type="password" name="pass" placeholder="Password"><br><br>
                 <input style="text-align: center" type="submit" value="Login">
             </form>
 
