@@ -40,7 +40,7 @@
          </div>
    
 
-    <div class = "container" style = "width : 700px; margin : auto; text-align : center;">		
+    <div class = "container" style = "margin : auto; text-align : center;">		
         <h1>Register Expense</h1><br>
 
         <?php
