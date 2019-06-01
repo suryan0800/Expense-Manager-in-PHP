@@ -34,9 +34,9 @@
     <body style = "background : #002447; ">
       <div class = "top" style="text-align: center ">
              <a href = "welcomepage.php"><button style="width:100px; float:left; font-size: 15px;" type = "button" >Home</button></a>
-              Expense Manager
-               <a href = "logout.php"><button style="width:100px; float:right; font-size: 15px;" type = "button" >Logout</button></a>
-           
+             
+             <a href = "logout.php"><button style="width:100px; float:right; font-size: 15px;" type = "button" >Logout</button></a>
+             <h3> Expense Manager</h3>
          </div>
    
 

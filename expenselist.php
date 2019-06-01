@@ -36,9 +36,9 @@
     <body>
          <div class = "top" style="text-align: center ">
                  <a href = "welcomepage.php"><button style="width:100px; float:left; font-size: 15px;" type = "button" >Home</button></a>
-                  Expense Manager
-                   <a href = "logout.php"><button style="width:100px; float:right; font-size: 15px;" type = "button" >Logout</button></a>
-               
+                 
+                 <a href = "logout.php"><button style="width:100px; float:right; font-size: 15px;" type = "button" >Logout</button></a>
+                 <h3> Expense Manager</h3>
          </div>
 
          <div class = "container" style = " margin :  auto; text-align : center;">	
@@ -52,6 +52,7 @@
                 <?php
                     if(!empty($_POST["date1"]) && !empty($_POST["date2"]))
                     {
+                        $item=array();
                         $total = 0;
                         $date1 = strtotime($_POST["date1"]);
                         $date2 = strtotime($_POST["date2"]);
@@ -59,7 +60,7 @@
                             .date('d-m-Y',$date1)." To "
                             .date('d-m-Y',$date2)."</h3>";
                         echo "<table border=1 width = '1000'>";
-                        echo "<tr><td>Date</td><td>Time</td><td>Product</td><td>Amount</td></tr>";
+                        echo "<tr><td>Date</td><td>Time</td><td>Product</td><td>Amount (Rs.)</td></tr>";
 
                        
                                             
@@ -85,11 +86,33 @@
                                     $amount = $row["amount"];
                                     $total = $total + $amount;
                                     echo "<tr><td>$datee</td><td>$timee</td><td>$purpose</td><td>$amount</td></tr>";
+
+                                    if(array_key_exists($purpose,$item))
+                                    {
+                                         $item["$purpose"] += $amount;
+                                    }
+                                    else
+                                    {
+                                        $item["$purpose"] = 0;
+                                        $item["$purpose"] += $amount;
+                                    }
                                 }
                             }
                         }
                         echo "</table>";
                         echo "<p>Total Spendings : ".$total."</p>";
+                        echo "<br><br>";
+                        echo "<h3>Itemwise Spending Table for the Dates : "
+                            .date('d-m-Y',$date1)." To "
+                            .date('d-m-Y',$date2)."</h3>";
+                        echo "<table border=1 width = '1000'>";
+                        echo "<tr><td>Item</td><td>Spendings (Rs.)</td></tr>";
+
+                        foreach($item as $key=>$val)
+                        {
+                             echo "<tr><td>$key</td><td>$val</td></tr>";
+                        }
+                        echo "</table>";
                     }
                 ?>
          </div>

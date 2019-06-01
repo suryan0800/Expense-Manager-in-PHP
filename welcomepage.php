@@ -34,12 +34,11 @@
     </head>
     <body>
          <div class = "top" style="text-align: center">
-          
+             <a href = "logout.php"><button style="width:100px; float:right; font-size: 15px;" type = "button" >Logout</button></a>
             <h3>Expense Manager
-               <a href = "logout.php"><button style="width:100px; float:right; font-size: 15px;" type = "button" >Logout</button></a>
-           </h3>
+            </h3>
          </div>
-	    <div class = "container" style = "width : 700px; margin :  auto; text-align : center;">	
+	    <div class = "container" style = "margin :  auto; text-align : center;">	
             <h1>Welcome to Expense Manager</h1>
 
             <p>Look everywhere you can to cut a little bit from your expenses. It will all add up to a meaningful sum.</p>
@@ -50,6 +49,8 @@
             <a href = "expenselist.php"><button type = "button" >View Expenses</button></a>
 
 	    </div>
+       
+           
         <?php 
        
         echo "<p>Logged in as ".$_SESSION["user"]."</p>";
@@ -57,5 +58,6 @@
         echo "<p>at ".$_SESSION["time"]."</p>";
     
         ?>
+        
     </body>
 </html>
