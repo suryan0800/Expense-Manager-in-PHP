@@ -8,6 +8,7 @@
     <body>
        <div class = "top">
             <h3>Expense Manager</h3>
+
        </div>
       
        <div  style = "  text-align : center;   background : #002447;">	
@@ -40,6 +41,10 @@
                         $row=$result->fetch_assoc();
                         if($row["pass"] == $pass)
                         {
+                           session_start();
+                           $_SESSION["user"] = $name;
+                           $_SESSION["date"] = date("d-m-Y");
+                           $_SESSION["time"] = date("h:i:s A");
                            header("Location: welcomepage.php");
                            exit();
 
@@ -52,6 +57,7 @@
                 }
                
             ?>
+            <p>Session expires in 10 minutes after Login</p>
         </div>
 
     </body>
