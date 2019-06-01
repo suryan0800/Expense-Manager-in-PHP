@@ -45,6 +45,7 @@
                            $_SESSION["user"] = $name;
                            $_SESSION["date"] = date("d-m-Y");
                            $_SESSION["time"] = date("h:i:s A");
+                           $con->close();
                            header("Location: welcomepage.php");
                            exit();
 
@@ -52,7 +53,9 @@
                     }
                     else
                     {
-                     echo "<p>invalid User Name or Password</p>";
+                       
+                          $con->close();
+                          echo "<p>invalid User Name or Password</p>";
                     }
                 }
                
