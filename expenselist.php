@@ -1,27 +1,7 @@
 <?php
-       
-          session_start();
-          function logout1()
-          {
-            session_unset();
-            session_destroy();
-            header("Location: login.php");
-            exit();
-         }
-         if(empty($_SESSION["user"]))
-         {
-            logout1();
-         }
-        elseif($_SESSION["date"] != date("d-m-Y"))
-        {           
-            logout1();
-        }
-        elseif(strtotime('+10 minutes',strtotime($_SESSION["time"])) < strtotime(date("h:i:s A")))
-        {             
-           logout1();
-        }
-        
-        ?>
+        include "checklogin.php";
+?>
+
 
 
 <html>
@@ -116,6 +96,13 @@
                     }
                 ?>
          </div>
+         <?php 
+       
+        echo "<p>Logged in as ".$_SESSION["user"]."</p>";
+        echo "<p>on ".$_SESSION["date"]."</p>";
+        echo "<p>at ".$_SESSION["time"]."</p>";
+    
+        ?>
     </body>
 <html>
 
